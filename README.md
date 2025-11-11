@@ -44,67 +44,44 @@ It helps students and professionals **discover, bookmark, and get notified** abo
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js 14 (App Router)**
-- **React.js**
-- **Tailwind CSS**
-- **Framer Motion**
-- **ShadCN/UI**
-- **Magic UI (Border Beam)**
-- **Lucide Icons**
+- ⚛️ **Next.js 14 (App Router)**
+- ⚛️ **React.js**
+- 🎨 **Tailwind CSS**
+- 💫 **Framer Motion**
+- 🧩 **ShadCN/UI**
+- 🪄 **Magic UI (Border Beam)**
+- 🧭 **Lucide Icons**
 
 ### Backend
-- **Node.js + Next.js API Routes**
-- **Prisma ORM**
-- **PostgreSQL**
-- **Clerk Authentication**
-- **Gemini AI API (Google Generative AI)**
+- 🖥️ **Node.js + Next.js API Routes**
+- 🔗 **Prisma ORM**
+- 🧮 **PostgreSQL**
+- 🔐 **Clerk Authentication**
+- 🤖 **Gemini AI API (Google Generative AI)**
 
 ### Other Tools
-- **Resend (for emails)**
-- **Vercel Cron Jobs**
-- **Axios** for API requests
-- **Zod** for schema validation
-
-## ⚙️ Getting Started
-
-### Prerequisites
-- Node.js 18+
-- PostgreSQL
-- Gemini API Key
-- Clerk account (for auth)
-- Resend or SendGrid (for emails)
+- 📧 **Resend (for emails)**
+- ⏰ **Vercel Cron Jobs**
+- 🧾 **Axios** for API requests
+- 🧱 **Zod** for schema validation
 
 ---
 
-### Installation
+## ⚙️ Getting Started
 
-1️⃣ **Clone the repository**
+### 🧰 Prerequisites
+Before starting, ensure you have:
+- Node.js 18+
+- PostgreSQL
+- Gemini API Key
+- Clerk Account (for Auth)
+- Resend / SendGrid (for Emails)
+
+---
+
+## 🚀 Installation
+
+### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/<your-username>/TalentVerse.git
 cd TalentVerse
-
-2️⃣ Install dependencies
-
-npm install
-
-5️⃣ Start the development server
-
-npm run dev
-
-
-App runs at 👉 http://localhost:3000
-
-
-🧩 Planned Features
-
-✅ AI-powered LinkedIn Post Generator
-
-✅ Smart Alerts & Preference Modal
-
-✅ Clerk Auth Integration
-
-🔄 Email Reminder System (via Cron + Resend)
-
-🔄 Admin Dashboard for event moderation
-
-🔄 AI Resume Review (future enhancement)
