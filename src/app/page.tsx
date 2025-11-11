@@ -1,65 +1,118 @@
-import Image from "next/image";
+﻿"use client"
 
-export default function Home() {
+import { useEffect } from 'react'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { AnimatedCard } from '@/components/shared/animated-card'
+import PlatformMarquee from '@/components/home/platform-marquee'
+import StatsSection from '@/components/home/stats-section'
+import EventCarousel from '@/components/home/event-carousel'
+import TestimonialsSection from '@/components/home/testimonials-section'
+import HowItWorksSection from '@/components/home/how-it-works'
+import FinalCTASection from '@/components/home/final-cta'
+import Footer from '@/components/home/footer'
+import AlertBell from '@/components/home/alert-bell'
+import { AuroraText } from "@/components/ui/aurora-text" // ✅ Added AuroraText import
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className='min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-100'>
+      {/* Hero Section */}
+      <div className='max-w-6xl mx-auto px-4 py-20'>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className='text-center'
+        >
+          <h1 className='text-5xl md:text-6xl font-bold text-gray-900 mb-6'>
+            Welcome to{" "}
+            <AuroraText
+              colors={["#0070F3", "#38bdf8", "#7928CA", "#FF0080"]}
+              speed={1.5}
+              className="ml-2"
+            >
+              Event Aggregator
+            </AuroraText>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          
+
+          <p className='text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed mt-6'>
+            Your single destination for all college events, internships, hackathons, and coding challenges across multiple platforms.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <motion.div
+            className='space-x-4'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+            <Link
+              href='/dashboard/feed'
+              className='bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl'
+            >
+              🚀 Explore Events
+            </Link>
+            <Link
+              href='/dashboard/generator'
+              className='border border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-medium hover:bg-blue-50 transition-all duration-300'
+            >
+              ✨ Try Post Generator
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* Features Grid */}
+        <motion.div
+          className='grid md:grid-cols-3 gap-8 mt-20'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
+          <AnimatedCard className='bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300'>
+            <div className='text-2xl mb-4'>🌐</div>
+            <h3 className='text-lg font-semibold mb-3 text-gray-900'>All Platforms</h3>
+            <p className='text-gray-600 leading-relaxed'>Aggregated events from Unstop, HackerRank, Internshala and more in one place</p>
+          </AnimatedCard>
+
+          <AnimatedCard className='bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300'>
+            <div className='text-2xl mb-4'>🔔</div>
+            <h3 className='text-lg font-semibold mb-3 text-gray-900'>Smart Alerts</h3>
+            <p className='text-gray-600 leading-relaxed'>Get personalized notifications about events matching your interests and skills</p>
+          </AnimatedCard>
+
+          <AnimatedCard className='bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300'>
+            <div className='text-2xl mb-4'>🤖</div>
+            <h3 className='text-lg font-semibold mb-3 text-gray-900'>AI Generator</h3>
+            <p className='text-gray-600 leading-relaxed'>Create professional LinkedIn posts in seconds with AI assistance</p>
+          </AnimatedCard>
+        </motion.div>
+      </div>
+
+      {/* Platform Marquee Section */}
+      <PlatformMarquee />
+
+      {/* Stats Section */}
+      <StatsSection />
+
+      {/* Event Carousel Section */}
+      <EventCarousel />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
+
+      {/* How It Works Section */}
+      <HowItWorksSection />
+
+      {/* Final CTA Section */}
+      <FinalCTASection />
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Floating Alert Bell */}
+      <AlertBell />
+    </main>
+  )
 }
