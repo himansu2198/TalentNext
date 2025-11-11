@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 TalentVerse – AI-Powered Event Aggregation Platform
 
-## Getting Started
+TalentVerse is a full-stack platform that aggregates **internships, hackathons, and coding challenges** from multiple platforms like **Unstop, LeetCode, and HackerRank** into a unified dashboard.  
+It helps students and professionals **discover, bookmark, and get notified** about upcoming events — with smart alerts, personalized recommendations, and AI-powered LinkedIn post generation.
 
-First, run the development server:
+---
 
+## ✨ Features
+
+### 🧠 Event Aggregation
+- Collects data from multiple event platforms (Unstop, HackerRank, LeetCode, etc.)
+- Displays them in a clean, paginated dashboard
+- Filters by difficulty, platform, and event type
+
+### ⚡ AI-Powered LinkedIn Post Generator
+- Uses **Gemini API** to generate LinkedIn posts in multiple styles (Simple, Professional, Storytelling)
+- Supports emojis, hashtags, and customizable tone
+- Built-in animated **Border Beam** effect for modern UI
+
+### 🔔 Smart Alerts
+- Users can subscribe to specific event types (Hackathons, Internships, Workshops, Coding Challenges)
+- Auto-reminders via email (with planned Cron jobs)
+- Preferences saved with Clerk authentication
+
+### 💾 Bookmark & Dashboard
+- Save and view bookmarked events  
+- Personalized user dashboard showing saved, upcoming, and completed events
+
+### 🎨 Modern UI
+- Built using **Tailwind CSS**, **Framer Motion**, and **ShadCN/UI**
+- Animated interactions and gradients for better UX
+- Responsive and accessible on all devices
+
+### 🧩 Authentication
+- Integrated **Clerk Auth** for secure login, signup, and session handling
+- Google sign-in and user profile management
+
+### 📅 Upcoming Feature (Cron Jobs)
+- Automated email reminders for upcoming events
+- Smart notifications sent daily via Resend / SendGrid
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Next.js 14 (App Router)**
+- **React.js**
+- **Tailwind CSS**
+- **Framer Motion**
+- **ShadCN/UI**
+- **Magic UI (Border Beam)**
+- **Lucide Icons**
+
+### Backend
+- **Node.js + Next.js API Routes**
+- **Prisma ORM**
+- **PostgreSQL**
+- **Clerk Authentication**
+- **Gemini AI API (Google Generative AI)**
+
+### Other Tools
+- **Resend (for emails)**
+- **Vercel Cron Jobs**
+- **Axios** for API requests
+- **Zod** for schema validation
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- Node.js 18+
+- PostgreSQL
+- Gemini API Key
+- Clerk account (for auth)
+- Resend or SendGrid (for emails)
+
+---
+
+### Installation
+
+1️⃣ **Clone the repository**
 ```bash
+git clone https://github.com/<your-username>/TalentVerse.git
+cd TalentVerse
+
+2️⃣ Install dependencies
+
+npm install
+
+5️⃣ Start the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+App runs at 👉 http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+🧩 Planned Features
 
-To learn more about Next.js, take a look at the following resources:
+✅ AI-powered LinkedIn Post Generator
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✅ Smart Alerts & Preference Modal
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+✅ Clerk Auth Integration
 
-## Deploy on Vercel
+🔄 Email Reminder System (via Cron + Resend)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔄 Admin Dashboard for event moderation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🔄 AI Resume Review (future enhancement)
